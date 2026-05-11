@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://qs0rl4ylg2pr"]
+
+[ext_resource type="Script" uid="uid://bojedbdyewiln" path="res://player.gd" id="1_hqtel"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_hqtel"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_sweqy"]
+
+[node name="Player" type="XROrigin3D" unique_id=345929261]
+script = ExtResource("1_hqtel")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=530748199]
+
+[node name="LeftHand" type="XRController3D" parent="." unique_id=6590275]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" unique_id=546172792 instance=ExtResource("1_i3pqv")]
+
+[node name="FunctionPickup" parent="LeftHand" unique_id=594654776 instance=ExtResource("2_hqtel")]
+
+[node name="RightHand" type="XRController3D" parent="." unique_id=1653622082]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" unique_id=411073704 instance=ExtResource("3_sweqy")]
+
+[node name="FunctionPickup" parent="RightHand" unique_id=1046995694 instance=ExtResource("2_hqtel")]

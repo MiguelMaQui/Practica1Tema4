@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dw81y1qhw7rif"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_1q6d5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0hrt4"]
+height = 0.12
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j64yv"]
+albedo_color = Color(0.298126, 0.29827496, 0.34241122, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ly5u3"]
+material = SubResource("StandardMaterial3D_j64yv")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.12
+
+[node name="PickableObject" unique_id=1337584962 instance=ExtResource("1_1q6d5")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CylinderShape3D_0hrt4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=1325553241]
+mesh = SubResource("CylinderMesh_ly5u3")

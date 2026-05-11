@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b425ac1y7p1l7"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_sha3n"]
+[ext_resource type="Script" uid="uid://dmf6cn5is82m7" path="res://pelota.gd" id="2_0okw3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0okw3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7cd6"]
+albedo_color = Color(1, 0.27450982, 0.03529412, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mwsff"]
+material = SubResource("StandardMaterial3D_p7cd6")
+
+[node name="PickableObject" unique_id=861531275 instance=ExtResource("1_sha3n")]
+script = ExtResource("2_0okw3")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_0okw3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=760793811]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_mwsff")
